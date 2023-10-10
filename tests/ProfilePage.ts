@@ -1,4 +1,4 @@
-import { type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from "@playwright/test";
 
 export class GithubProfilePage {
   readonly page: Page;
@@ -8,7 +8,7 @@ export class GithubProfilePage {
   constructor(page: Page, username: string) {
     this.username = username;
     this.page = page;
-    this.pinnedRepositories = page.locator('.pinned-item-list-item-content');
+    this.pinnedRepositories = page.locator(".pinned-item-list-item-content");
   }
 
   async goto() {
@@ -17,5 +17,20 @@ export class GithubProfilePage {
 
   async getPinnedRepositories() {
     return await this.pinnedRepositories.all();
+  }
+
+  async getRepoName(repo: Locator) {
+    return await repo.locator(".text-bold").first().innerText();
+  }
+
+  async getRepoDescription(repo: Locator) {
+    return await repo.locator(".pinned-item-desc").first().innerText();
+  }
+
+  async getRepoLanguage(repo: Locator) {
+    return await repo
+      .locator("[itemprop='programmingLanguage']")
+      .first()
+      .innerText();
   }
 }

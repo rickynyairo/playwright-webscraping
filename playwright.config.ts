@@ -57,6 +57,7 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
+  timeout: 5000,
 
   /* Run your local dev server before starting the tests */
   // webServer: {

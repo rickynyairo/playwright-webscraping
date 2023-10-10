@@ -1,0 +1,14 @@
+{
+  "name": "playwright-webscraping",
+  "version": "1.0.0",
+  "description": "Webscraping using playwright. A short guide.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.38.1",
+    "@types/node": "^20.8.4"
+  }
+}
